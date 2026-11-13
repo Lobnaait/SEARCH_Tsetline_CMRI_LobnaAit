@@ -1,0 +1,39 @@
+Train: 100 | Test: 50 | 57 features (0 all-NaN features dropped, 0 missing values imputed)
+[MLP] Optuna selection on training set (1-100):
+  30 trials (3 pruned); best trial #23: smoothed CV acc 0.969
+[MLP] Selected {'hidden_dim': 128, 'dropout': 0.14755724863659525, 'lr': 0.0022354124592972886, 'weight_decay': 0.0005162258782817646, 'batch_size': 16, 'epochs': 7} (selection CV acc 0.975 ± 0.025, biased) [665s]
+[MLP] outer fold 1: {'hidden_dim': 32, 'dropout': 0.4418324933601109, 'lr': 0.003152334039889632, 'weight_decay': 1.5809075212346354e-06, 'batch_size': 32, 'epochs': 65} -> held-out acc 1.000
+[MLP] outer fold 2: {'hidden_dim': 128, 'dropout': 0.585558103866113, 'lr': 0.009232367595936337, 'weight_decay': 1.039372668015642e-05, 'batch_size': 32, 'epochs': 98} -> held-out acc 0.883
+[MLP] outer fold 3: {'hidden_dim': 256, 'dropout': 0.4988157798317585, 'lr': 0.003640482705257864, 'weight_decay': 0.004566556725076491, 'batch_size': 32, 'epochs': 10} -> held-out acc 0.983
+[MLP] outer fold 4: {'hidden_dim': 128, 'dropout': 0.38096943341485157, 'lr': 0.008982504070223963, 'weight_decay': 0.00021092561812669088, 'batch_size': 32, 'epochs': 17} -> held-out acc 0.833
+[MLP] outer fold 5: {'hidden_dim': 128, 'dropout': 0.4620668118871769, 'lr': 0.0005277853178809278, 'weight_decay': 7.147750192201486e-05, 'batch_size': 8, 'epochs': 34} -> held-out acc 0.967
+[MLP] Nested CV accuracy: 0.933 ± 0.072 [1459s]
+[MLP] Fitted temperature tau = 0.260 (OOF NLL 0.115, OOF accuracy 0.957)
+[MLP] run  1: acc 0.880 | macro-F1 0.879 | ECE 0.078
+[MLP] run  2: acc 0.880 | macro-F1 0.877 | ECE 0.164
+[MLP] run  3: acc 0.860 | macro-F1 0.860 | ECE 0.064
+[MLP] run  4: acc 0.900 | macro-F1 0.897 | ECE 0.076
+[MLP] run  5: acc 0.900 | macro-F1 0.901 | ECE 0.074
+[MLP] run  6: acc 0.840 | macro-F1 0.838 | ECE 0.116
+[MLP] run  7: acc 0.880 | macro-F1 0.878 | ECE 0.109
+[MLP] run  8: acc 0.780 | macro-F1 0.776 | ECE 0.174
+[MLP] run  9: acc 0.860 | macro-F1 0.853 | ECE 0.092
+[MLP] run 10: acc 0.880 | macro-F1 0.880 | ECE 0.071
+
+[MLP] TEST accuracy: 0.866 ± 0.035 across 10 seeds; 95% bootstrap CI [0.788, 0.932]
+                     mean    std
+accuracy            0.866  0.035
+macro_f1            0.864  0.036
+ece                 0.102  0.039
+brier               0.207  0.050
+nll                 0.509  0.106
+ece_uncalibrated    0.137  0.029
+brier_uncalibrated  0.214  0.022
+nll_uncalibrated    0.438  0.039
+Mean confusion matrix:
+ [[8.2 0.  1.5 0.3 0. ]
+ [0.  9.5 0.  0.1 0.4]
+ [2.2 0.  7.8 0.  0. ]
+ [0.  1.  0.1 8.2 0.7]
+ [0.  0.  0.  0.4 9.6]]
+Misclassified: [(101, 'DCM', '10%'), (102, 'NOR', '30%'), (107, 'NOR', '40%'), (110, 'NOR', '20%'), (121, 'RV', '40%'), (122, 'DCM', '100%'), (123, 'NOR', '60%'), (125, 'NOR', '20%'), (134, 'HCM', '40%'), (135, 'MINF', '100%'), (136, 'DCM', '50%'), (139, 'NOR', '10%'), (143, 'MINF', '50%'), (145, 'MINF', '70%'), (146, 'HCM', '10%'), (149, 'DCM', '20%')]

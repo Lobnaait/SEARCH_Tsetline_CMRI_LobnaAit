@@ -1,0 +1,40 @@
+Train: 100 | Test: 50 | 43 features (0 all-NaN features dropped, 0 missing values imputed)
+[Random forest] Optuna selection on training set (1-100):
+  30 trials (1 pruned); best trial #1: smoothed CV acc 0.960
+[Random forest] Selected {'n_estimators': 900, 'max_depth': 12, 'min_samples_leaf': 5, 'max_features': 'log2', 'epochs': 1} (selection CV acc 0.960 ± 0.042, biased) [201s]
+[Random forest] outer fold 1: {'n_estimators': 1000, 'max_depth': 12, 'min_samples_leaf': 3, 'max_features': 0.5, 'epochs': 1} -> held-out acc 0.950
+[Random forest] outer fold 2: {'n_estimators': 200, 'max_depth': 5, 'min_samples_leaf': 5, 'max_features': 'log2', 'epochs': 1} -> held-out acc 0.900
+[Random forest] outer fold 3: {'n_estimators': 800, 'max_depth': 5, 'min_samples_leaf': 8, 'max_features': 'log2', 'epochs': 1} -> held-out acc 0.950
+[Random forest] outer fold 4: {'n_estimators': 100, 'max_depth': 8, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'epochs': 1} -> held-out acc 0.950
+[Random forest] outer fold 5: {'n_estimators': 1000, 'max_depth': 12, 'min_samples_leaf': 3, 'max_features': 'log2', 'epochs': 1} -> held-out acc 1.000
+[Random forest] Nested CV accuracy: 0.950 ± 0.035 [1109s]
+[Random forest] Fitted temperature tau = 0.320 (OOF NLL 0.164, OOF accuracy 0.940)
+[Random forest] run  1: acc 0.920 | macro-F1 0.919 | ECE 0.058
+[Random forest] run  2: acc 0.920 | macro-F1 0.919 | ECE 0.029
+[Random forest] run  3: acc 0.920 | macro-F1 0.919 | ECE 0.053
+[Random forest] run  4: acc 0.920 | macro-F1 0.919 | ECE 0.058
+[Random forest] run  5: acc 0.920 | macro-F1 0.919 | ECE 0.082
+[Random forest] run  6: acc 0.920 | macro-F1 0.919 | ECE 0.044
+[Random forest] run  7: acc 0.920 | macro-F1 0.919 | ECE 0.074
+[Random forest] run  8: acc 0.920 | macro-F1 0.919 | ECE 0.044
+[Random forest] run  9: acc 0.920 | macro-F1 0.919 | ECE 0.066
+[Random forest] run 10: acc 0.920 | macro-F1 0.919 | ECE 0.054
+
+[Random forest] TEST accuracy: 0.920 ± 0.000 across 10 seeds; 95% bootstrap CI [0.840, 0.980]
+                     mean    std
+accuracy            0.920  0.000
+macro_f1            0.919  0.000
+ece                 0.056  0.016
+brier               0.117  0.006
+nll                 0.247  0.009
+ece_uncalibrated    0.206  0.002
+brier_uncalibrated  0.197  0.002
+nll_uncalibrated    0.415  0.004
+Mean confusion matrix:
+ [[ 7.  0.  3.  0.  0.]
+ [ 0. 10.  0.  0.  0.]
+ [ 1.  0.  9.  0.  0.]
+ [ 0.  0.  0. 10.  0.]
+ [ 0.  0.  0.  0. 10.]]
+Misclassified: [(101, 'DCM', '100%'), (122, 'DCM', '100%'), (135, 'MINF', '100%'), (149, 'DCM', '100%')]
+SHAP plots saved (representative run 1)
